@@ -89,9 +89,16 @@ jobs:
         chmod 755 gradlew
         ./gradlew assembleFdroidDebug
 
-    - name: Upload APKs
+    - name: Upload phone APK (arm64)
       uses: actions/upload-artifact@v7
       if: ${{ success() }}
       with:
         name: Jisr-arm64
         path: ${{ github.workspace }}/V2rayNG/app/build/outputs/apk/*/debug/*arm64-v8a*.apk
+
+    - name: Upload TV APK (armeabi-v7a)
+      uses: actions/upload-artifact@v7
+      if: ${{ success() }}
+      with:
+        name: Jisr-armv7
+        path: ${{ github.workspace }}/V2rayNG/app/build/outputs/apk/*/debug/*armeabi-v7a*.apk
