@@ -93,5 +93,5 @@ jobs:
       uses: actions/upload-artifact@v7
       if: ${{ success() }}
       with:
-        name: Jisr-debug-apk
-        path: ${{ github.workspace }}/V2rayNG/app/build/outputs/apk/*/debug/*.apk
+        name: Jisr-arm64
+        path: ${{ github.workspace }}/V2rayNG/app/build/outputs/apk/*/debug/*arm64-v8a*.apk
